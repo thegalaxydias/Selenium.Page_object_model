@@ -14,15 +14,13 @@ namespace Selenium.Page_object_model
             driver.Navigate().GoToUrl("https://www.google.com/");
 
             GoogleHomePage googleHomePage = new GoogleHomePage(driver);
-            googleHomePage.Search("IT Craft");
+            googleHomePage
+                .Search("IT Craft")
+                .results();
 
-
-            Console.Clear();
-            GoogleSearchResultPage googleSearchResultPage = new GoogleSearchResultPage(driver);
-            googleSearchResultPage.results();
 
            
-          
+                 
             driver.Quit();
         }
     }

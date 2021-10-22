@@ -21,14 +21,15 @@ namespace Selenium.Page_object_model.PageObjects
         public IWebElement result => driver.FindElement(By.Id("result-stats"));
         public IWebElement time => driver.FindElement(By.CssSelector("#result-stats > nobr"));
 
-        public void results()
+        public GoogleSearchResultPage results()
         {
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            //wait.Until(ExpectedConditions.invisibilityOf(result));
+
 
             string a = result.Text;
             string b = time.Text;
-            Console.WriteLine(a.Length - b.Length);
+            string c = result.Text.Remove(a.Length - b.Length);
+            Console.WriteLine($"Result: " + c);
+            return this;
             
         }
 
